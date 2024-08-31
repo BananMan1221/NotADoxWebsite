@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)https://00fbac3e-adc4-4b13-93cf-59d74eb7d2c7-00-38sfm4dttpkom.janeway.replit.dev/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET DOXXED XD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #00bcd4, #003366);
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #004d40;
+            border-radius: 8px;
+            margin: 20px;
+        }
+
+        .info-label {
+            font-weight: bold;
+        }
+
+        .info-value {
+            font-style: italic;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ffeb3b;
+        }
+    </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+
+<body>
+    <div class="container">
+        <h1>Stupid Thought They Could Get SRC</h1>
+        <p><span class="info-label">IP Address:</span> <span id="ip" class="info-value">35.150.46.128</span></p>
+        <p><span class="info-label">Location:</span> <span id="location" class="info-value">Weatherford, Texas, United States</span></p>
+        <p><span class="info-label">ISP:</span> <span id="isp" class="info-value">CHARTER-20115</span></p>
+        <p><span class="info-label">Timezone:</span> <span id="timezone" class="info-value">America/Chicago</span></p>
+        <p><span class="info-label">Latitude/Longitude:</span> <span id="latlon" class="info-value">32.7566, -97.7906</span>
+        </p>
+        <p><span class="info-label">Continent:</span> <span id="continent" class="info-value">N/A</span></p>
+        <p><span class="info-label">Region Code:</span> <span id="region_code" class="info-value">TX</span></p>
+        <p><span class="info-label">Country Code:</span> <span id="country_code" class="info-value">US</span>
+        </p>
+        <p id="message">Get Doxxed xD</p>
+    </div>
+
+    <script>
+        // Example code to fetch and display IP and location information
+        async function getIPAndLocation() {
+            try {
+                // Fetch IP address
+                const ipResponse = await fetch('https://api.ipify.org?format=json');
+                const ipData = await ipResponse.json();
+                const ip = ipData.ip;
+
+                // Fetch location data
+                const locationResponse = await fetch(`https://ipapi.co/${ip}/json/`);
+                const locationData = await locationResponse.json();
+
+                // Display IP address and additional information
+                document.getElementById('ip').textContent = ip;
+                document.getElementById('location').textContent = `${locationData.city || 'N/A'}, ${locationData.region || 'N/A'}, ${locationData.country_name || 'N/A'}`;
+                document.getElementById('isp').textContent = locationData.org || 'N/A';
+                document.getElementById('timezone').textContent = locationData.timezone || 'N/A';
+                document.getElementById('latlon').textContent = `${locationData.latitude || 'N/A'}, ${locationData.longitude || 'N/A'}`;
+                document.getElementById('continent').textContent = locationData.continent_name || 'N/A';
+                document.getElementById('region_code').textContent = locationData.region_code || 'N/A';
+                document.getElementById('country_code').textContent = locationData.country_code || 'N/A';
+            } catch (error) {
+                console.error('Error fetching IP or location:', error);
+                // Handle error in the UI
+                document.getElementById('message').textContent = 'Error fetching data.';
+            }
+        }
+
+        // Call the function on page load
+        getIPAndLocation();
+    </script>
+
+
+<iframe src="./GET DOXXED XD_files/greasyfork.html" style="width: 0px; height: 0px; border: 0px;"></iframe></body></html>
